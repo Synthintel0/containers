@@ -18,6 +18,8 @@ RUN apt-get update --yes && \
     apt install --yes --no-install-recommends\
     wget\
     bash\
+    espeak-ng\
+    ffmpeg\
     openssh-server &&\
     echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN /usr/bin/python3 -m pip install --upgrade pip
@@ -46,6 +48,8 @@ WORKDIR /MyGirlGPT
 RUN cd opendan-text-generation-webui && python download-model.py TehVenom/Pygmalion-Vicuna-1.1-7b
 ADD install_bark.py .
 RUN python install_bark.py
+RUN python -m nltk.downloader punkt
+
 ADD start_opendan-textgen_server.sh /MyGirlGPT/
 ADD start_opendan_tts_server.sh /MyGirlGPT/
 ADD start_telegram_bot.sh /MyGirlGPT/
