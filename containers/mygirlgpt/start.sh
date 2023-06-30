@@ -43,6 +43,7 @@ fi
 
 echo "Launching Server"
 #python server.py --listen # runs Oobabooga text generation webui on port 7860
+/usr/bin/redis-server /etc/redis/redis.con
 
 /MyGirlGPT/start_opendan-textgen_server.sh 
 

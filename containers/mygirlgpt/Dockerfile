@@ -49,6 +49,7 @@ RUN cd opendan-text-generation-webui && python download-model.py TehVenom/Pygmal
 ADD install_bark.py .
 RUN python install_bark.py
 RUN python -m nltk.downloader punkt
+RUN apt install -y redis
 
 ADD start_opendan-textgen_server.sh /MyGirlGPT/
 ADD start_opendan_tts_server.sh /MyGirlGPT/
