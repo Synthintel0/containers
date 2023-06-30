@@ -55,7 +55,7 @@ ADD start_opendan_textgen_server.sh /MyGirlGPT/
 ADD start_opendan_tts_server.sh /MyGirlGPT/
 ADD start_telegram_bot.sh /MyGirlGPT/
 
-RUN chmod +x /MyGirlGPT/start_opendan-textgen_server.sh
+RUN chmod +x /MyGirlGPT/start_opendan_textgen_server.sh
 RUN chmod +x /MyGirlGPT/start_opendan_tts_server.sh
 RUN chmod +x /MyGirlGPT/start_telegram_bot.sh
 ADD start.sh /
