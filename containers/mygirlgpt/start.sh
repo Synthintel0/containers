@@ -18,7 +18,7 @@ then
   nohup jupyter lab --allow-root --no-browser --port=8888 --ip=* --ServerApp.token=$JUPYTER_PASSWORD --ServerApp.allow_origin=* --ServerApp.preferred_dir=/workspace &
 fi
 
-cd /workspace/MyGirlGPT/
+cd /MyGirlGPT/
 
 if [ ! -z "$LOAD_MODEL" ] && [ "$LOAD_MODEL" != "TehVenom/Pygmalion-Vicuna-1.1-7b" ]; then
     rm -rf /MyGirlGPT/models/TehVenom_Pygmalion-Vicuna-1.1-7b
@@ -27,13 +27,13 @@ fi
 
 if [[ $OPENAI_API_KEY ]]
 then
-   echo 'OPENDAN_API_KEY=$OPENAI_API_KEY' >> /MyGirlGPT/opendan-text-generation-webui/.env
+   echo "OPENAI_API_KEY=${OPENAI_API_KEY}" >> /MyGirlGPT/opendan-text-generation-webui/.env
 fi
 
 
 if [[ $SD_ADDRESS ]]
 then
-  echo 'SD_ADDRESS=$SD_ADDRESS' >> /MyGirlGPT/opendan-text-generation-webui/.env
+  echo "SD_ADDRESS=${SD_ADDRESS}" >> /MyGirlGPT/opendan-text-generation-webui/.env
 fi
 
 if [[ $BOT_TOKEN ]]

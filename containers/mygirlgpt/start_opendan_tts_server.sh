@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /MyGirlGPT/opendan-tts-server
+cd /MyGirlGPT/opendan-tts-server/src
 nohup python main.py &

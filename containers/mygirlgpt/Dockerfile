@@ -41,13 +41,11 @@ RUN apt install -y npm && \
     cd /MyGirlGPT/TelegramBot &&\
     npm install
 
-RUN echo 'from bark import preload_models \n\
-preload_models()' >> install_bark.py && python install_bark.py
-
 WORKDIR /MyGirlGPT
 
 RUN cd opendan-text-generation-webui && python download-model.py TehVenom/Pygmalion-Vicuna-1.1-7b
-
+ADD install_bark.py .
+RUN python install_bark.py
 ADD start_opendan-textgen_server.sh /MyGirlGPT/
 ADD start_opendan_tts_server.sh /MyGirlGPT/
 ADD start_telegram_bot.sh /MyGirlGPT/
